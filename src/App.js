@@ -39,7 +39,12 @@ class App extends Component {
             this.setState({ mode: "welcome" });
           }.bind(this)}
         />
-        <TOC data={this.state.contents} />
+        <TOC
+          data={this.state.contents}
+          onChangePage={function () {
+            this.setState({ mode: "read" });
+          }.bind(this)}
+        />
         <Content title={_title} desc={_desc} />
       </div>
     );
