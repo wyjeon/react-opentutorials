@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     //state값 을 초기화
     this.state = {
-      mode: "welcome",
+      mode: "read",
       subject: { title: "WEB", sub: "World Wide Web" },
       welcome: { title: "Welcome", desc: "Hello React!" },
       contents: [
@@ -43,7 +43,11 @@ class App extends Component {
               onClick={function (event) {
                 console.log(event);
                 event.preventDefault();
-              }}
+                //this.state.mode = "welcome";
+                this.setState({
+                  mode: "welcome"
+                });
+              }.bind(this)}
             >
               {this.state.subject.title}
             </a>
