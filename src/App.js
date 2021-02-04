@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     //state값 을 초기화
     this.state = {
-      mode: "read",
+      mode: "create",
       selected_content_id: 2,
       subject: { title: "WEB", sub: "World Wide Web" },
       welcome: { title: "Welcome", desc: "Hello React!" },
