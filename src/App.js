@@ -14,7 +14,7 @@ class Subject extends Component {
   }
 }
 
-class Content extends Component {
+class TOC extends Component {
   render() {
     return (
       <nav>
@@ -34,11 +34,23 @@ class Content extends Component {
   }
 }
 
+class Content extends Component {
+  render() {
+    return (
+      <article>
+        <h2>HTML</h2>
+        HTML is...
+      </article>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Subject />
+        <TOC />
         <Content />
       </div>
     );
