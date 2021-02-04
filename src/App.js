@@ -23,7 +23,7 @@ class App extends Component {
     var _title,
       _desc = null;
     if (this.state.mode === "welcome") {
-      _title = this.state.contents.title;
+      _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
     } else if (this.state.mode === "read") {
       _title = this.state.contents[0].title;
@@ -32,10 +32,25 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Subject
+        {/* <Subject
           title={this.state.subject.title}
           sub={this.state.subject.sub}
-        />
+        /> */}
+        <header>
+          <h1>
+            <a
+              href="/"
+              onClick={function (event) {
+                console.log(event);
+                event.preventDefault();
+              }}
+            >
+              {this.state.subject.title}
+            </a>
+          </h1>
+          {this.state.subject.sub}
+        </header>
+
         <TOC data={this.state.contents} />
         <Content title={_title} desc={_desc} />
       </div>
