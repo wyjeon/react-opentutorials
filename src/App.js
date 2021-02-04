@@ -54,12 +54,27 @@ class App extends Component {
             //   desc: _desc
             // });
             // this.setState({ contents: this.state.contents });
-            var _contents = this.state.contents.concat({
+
+            // var _contents = this.state.contents.concat({
+            //   id: this.max_content_id,
+            //   title: _title,
+            //   desc: _desc
+            // });
+            // this.setState({ contents: _contents });
+
+            //배열일 경우 사용할 수 있다. Array.from()
+            var newContents = Array.from(this.state.contents);
+            newContents.push({
               id: this.max_content_id,
               title: _title,
               desc: _desc
             });
-            this.setState({ contents: _contents });
+            this.setState({ contents: newContents });
+
+            //객체일 경우 사용할 수 있다. Object.assign()
+            //var a = {name:"egoing"}
+            //Object.assign({}, a)
+            //console.log(a, b, a===b) {name:"egoing"}, {name:"egoing"}, false
           }.bind(this)}
         />
       );
