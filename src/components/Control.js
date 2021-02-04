@@ -27,16 +27,14 @@ class Control extends Component {
           </a>
         </li>
         <li>
-          <button
-            type="button"
-            value="button"
+          <input
             onClick={function (e) {
               e.preventDefault();
               this.props.onChangeMode("delete");
             }.bind(this)}
-          >
-            Delete
-          </button>
+            type="button"
+            value="delete"
+          ></input>
         </li>
       </ul>
     );
